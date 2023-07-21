@@ -1,0 +1,4 @@
+Add-Migration init -Context TeacherContext
+Update-DataBase -Context TeacherContext
+Add-Migration init -Context StudentContext
+Update-DataBase -Context StudentContext
