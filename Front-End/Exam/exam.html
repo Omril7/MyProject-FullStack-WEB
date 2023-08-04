@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+    <!-- Bootstrap Flatly -->
+    <link rel="stylesheet" href="../CSS/flatly.min.css">
+    <!-- UBUNTU Font-->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Ubuntu';
+        }
+    </style>
+</head>
+<body onload="loaded();">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" onclick="backWindow()" href="../Student/student.html">Student</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav ms-md-auto">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link" onclick="exitWindow()" href="../Login/login.html"><img src="../Images/logout.png" height="23"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Timer -->
+    <div class="container mt-3 text-success" style="text-align: right;" id="timerC">
+        <p id="timer" style="font-size: x-large; display: inline-block;"></p>&nbsp;&nbsp;
+        <p style="font-size: x-large; display: inline-block;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-alarm-fill" viewBox="0 0 16 16">
+                <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/>
+            </svg>
+        </p>
+    </div>
+
+    <!-- Exam -->
+    <div class="container">
+        <div class="row">
+
+            <!-- All Questions -->
+            <div class="col-sm-4">
+                <h4 style="display: inline-block;">Questions&nbsp;</h4>
+                <h4 style="display: inline-block;" id="n"></h4> &nbsp; \ &nbsp;
+                <h4 style="display: inline-block; color: green;">Answers&nbsp;</h4>
+                <h4 style="display: inline-block; color: green;" id="k">0</h4>
+
+                <div style="overflow: auto; max-height: 550px;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Question Number</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableQuestionsTbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Single Question View -->
+            <div class="col-sm-6 mx-5" id="singleQuestion">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Finish Exam Button -->
+    <div class="container my-3">
+        <button type="button" class="btn btn-success" onclick="finishExam()">Finish Exam</button>
+    </div>
+
+    <!-- Script -->
+    <script src="../Exam/exam.js"></script>
+</body>
+</html>
